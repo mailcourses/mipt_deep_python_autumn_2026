@@ -131,6 +131,7 @@ class TestUser(TestCase):
     def test_get_friends_count(self):
         steve = User("steve", 99)
         lst = []
+
         def count_calls(*args, **kwargs):
             lst.append(1)
             return ["neo"]
@@ -152,4 +153,3 @@ class TestUser(TestCase):
             ]
             self.assertEqual(calls, fetch_mock.mock_calls)
             self.assertEqual(lst, [1, 1])
-
